@@ -2,9 +2,7 @@
 
 The **Webfolio** Theme is a configurable theme for creating an online portfolio and blog with [Grav CMS](http://github.com/getgrav/grav). It is partially based on the [Quark Theme](https://github.com/getgrav/grav-theme-quark).
 
-## Sample
-
-My own personal website uses this theme. Feel free to [check it out](https://jasoncarloscox.com) or even look at the [source code](https://github.com/jasonccox/personal-site).
+My [personal website](https://jasoncarloscox.com) used to use this theme, but I've since moved on ([read why](https://jasoncarloscox.com/blog/switch-to-static.html)). However, everything should still work, and I'm still happy to answer any questions you might have. If you actively use the theme and would like to become its new maintainer, [email me](mailto:webfolio@jasoncarloscox.com).
 
 ## Installation
 
@@ -60,6 +58,8 @@ The `projects` template shows a section containing a grid of project tiles.
 
 **Custom FrontMatter Fields**
 - `projects` - A list of projects to be shown in this section. Each project can have a `title`, `image` (name of an image file stored in the page's directory), `description`, and `link` (URL).
+- `projects_per_page`- Number of projects to show initially and each time the "Show more" button is pressed. Leave empty to show all projects.
+- `show_more_txt` - Text for button to show more projects.
 
 #### Contact
 
@@ -115,13 +115,13 @@ Each page can have a bit of extra customization. These properties are set within
 
 ### Advanced
 
-More stylistic elements of the site (e.g., colors, fonts, etc.) can be customized using the `css/custom.css` file within the theme. Alternatively, you can edit `scss/variables.scss` and then recompile `scss/theme.scss` into `css-compiled/theme.min.scss` using Sass.
+More stylistic elements of the site (e.g., colors, fonts, etc.) can be customized by adding a `css/webfolio.css` file inside your `user/` directory or using the `css/custom.css` file within the theme itself. Alternatively, you can edit `scss/variables.scss` and then recompile `scss/theme.scss` into `css-compiled/theme.min.scss` using Sass.
 
 > Webfolio provides several CSS classes and variables for you to use. Take a look inside `scss/util.scss` to see what they are.
 
 ## Help
 
-Don't hesitate to reach out to me at [contact@jasoncarloscox.com](mailto:contact@jasoncarloscox.com) if you're having trouble using Webfolio. I'm happy to help!
+Don't hesitate to [create an issue](https://github.com/jasonccox/grav-theme-webfolio/issues) or reach out to me at [webfolio@jasoncarloscox.com](mailto:webfolio@jasoncarloscox.com) if you're having trouble using Webfolio. I'm happy to help!
 
 ## Contributing
 
