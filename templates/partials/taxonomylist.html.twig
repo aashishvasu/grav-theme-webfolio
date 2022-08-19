@@ -3,7 +3,7 @@
 {% if taxlist %}
 <span class="tags">
     {% for tax,value in taxlist[taxonomy] %}
-        {% set label_class = uri.param(taxonomy) == tax ? 'label-accent' : 'label-accent' %}
+        {% set label_class = uri.param(taxonomy) == tax ? 'label-accent' : 'label-accent-alt' %}
         <a class="label label-round-rect {{ label_class }}" href="{{ base_url }}/blog/{{ taxonomy }}{{ config.system.param_sep }}{{ tax }}">{{ tax }}</a>
     {% endfor %}
 </span>
