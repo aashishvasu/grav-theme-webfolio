@@ -8,9 +8,13 @@
 
         <section class="blog__cards">
             {% for post in posts.published %}
-                <a class="blog__card__link" href="{{ post.url }}">
+                <a class="blog__card__link" href="{{ post.url }}">                
                     <div class="blog__card">
-                        {{ post.media[post.header.image].html('', post.header.title ~ ' image', 'blog__card__img') }}
+                        {% if post.header.image %}
+                        <div class="blog__card__img">
+                            {{ post.media[post.header.image].html|raw }}
+                        </div>
+                        {% endif %}
                         <div class="blog__card__content {% if not post.media[post.header.image] %} no-img {% endif %}">
                             <h3 class="blog__card__title">
                                 {{ post.header.title }}
