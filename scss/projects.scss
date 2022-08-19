@@ -14,33 +14,33 @@
 	text-align: center;
 
 	background-color: $color-bg-hover;;
-	border: 1px solid;
-	border-radius: 2rem 4rem 2rem;
+	border: 3px solid;
+	border-radius: 2rem;
 	border-color: $color-accent-hover;
 	transition: border-radius $transition-time-hover, border-color $transition-time-hover, background-color $transition-time-hover;
 
 	.projects__card__img {		
-		border-radius: 2rem 4rem 0rem 0rem;
-		padding: 2rem;
+		border-radius: 2rem;
+		padding: 0rem;
 		transition: border-radius $transition-time-hover;
 	}
 
 	.projects__card__txt {		
-		border-radius: 2rem 4rem 0rem 0rem;
+		border-radius: 2rem;
 		padding: 1rem;
 		transition: border-radius $transition-time-hover;
 	}
 
 	&:hover {
-		border-radius: 1rem;
+		border-radius: .5rem;
 		border-color: $color-accent;
 		background-color: $color-bg-code;
 
 		.projects__card__img {
-			border-radius: 1rem 1rem 0rem 0rem;
+			border-radius: .5rem;
 		}
 		.projects__card__txt {
-			border-radius: 1rem;
+			border-radius: 2.5rem;
 		}
 	}
 
