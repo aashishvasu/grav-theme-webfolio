@@ -1,0 +1,14 @@
+<section class="sidebar bg-alt">
+    {% if config.plugins.archives.enabled %}
+        <div class="sidebar-content">
+            <h6>Archive</h6>
+            {% include "partials/archives.html.twig" %}
+        </div>
+    {% endif %}
+    {% if config.plugins.taxonomylist.enabled %}
+        <div class="sidebar-content">
+            <h6>Tags</h6>
+            {% include 'partials/taxonomylist.html.twig' with {'base_url':new_base_url, 'taxonomy':'tag'} %}
+        </div>
+    {% endif %}
+</section>
