@@ -1,0 +1,21 @@
+.sidebar {
+    width: 18rem;
+    min-width: 18rem;
+    padding: 1rem; /* set to inline-flex */
+    flex-direction: column;
+    align-items: stretch; /* align items to stretch */
+    height: min-content;
+    border-radius: 0.5rem;
+    margin-left: 1rem;
+    margin-right: auto;
+
+    @media only screen and (max-width: $screen-l){
+        width:100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.sidebar-content{
+    padding: 1rem 2rem 1rem 2rem;
+}
