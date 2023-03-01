@@ -7,7 +7,7 @@
         {{ content|raw }}
 
         <section class="blog__cards">
-            {% for post in posts.published %}
+            {% for post in posts.published|reverse %}
                 <a class="blog__card__link" href="{{ post.url }}">                
                     <div class="blog__card">
                         {% if post.header.image %}
