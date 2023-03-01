@@ -5,9 +5,14 @@
 <div class="blog">
     <section class="container">
         {{ content|raw }}
-
         <section class="blog__cards">
-            {% for post in posts.published|reverse %}
+            {# some collection #}
+            {% set collection = page.collection() %}
+            {# number of items per page #}
+            {% set limit = theme.pagination_limit %}
+            {% do paginate( collection, limit ) %}
+            {# Render the list of blog posts (automatically filtered when using pagination) #}
+            {% for post in collection %}
                 <a class="blog__card__link" href="{{ post.url }}">                
                     <div class="blog__card">
                         {% if post.header.image %}
@@ -30,6 +35,10 @@
                     </div>
                 </a>
             {% endfor %}
+            {# Render the pagination list #}
+            {% if config.plugins.pagination.enabled and collection.params.pagination %}
+                {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
+            {% endif %}
         </section>
     </section>
     {% include 'partials/sidebar.html.twig'%}

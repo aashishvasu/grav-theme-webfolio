@@ -59,6 +59,17 @@ form:
       accept:
         - image/png
 
+    pagination_limit:
+      type: text
+      label: Pagination Limit
+      description: Blog posts per page.
+      size: x-small
+      default: 5
+      placeholder: 5
+      validate:
+        type: number
+        min: 1
+
     show_external_links:
       type: toggle
       label: Show Extra Links in Navigation Menu
