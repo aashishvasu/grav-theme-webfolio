@@ -1,0 +1,86 @@
+.container
+    max-width: $screen-l
+    margin-left: auto
+    margin-right: auto
+
+
+input, textarea, button
+    font-family: $font-family-base
+    font-size: $font-size-s
+    color: $color-text
+
+input, textarea
+    border-radius: 0
+    border-width: 0.05rem
+    border-color: $color-border
+    border-style: solid
+    padding: 0.3rem
+    width: 100%
+
+    .bg-alt &
+        border-color: $color-border
+
+    &:focus
+        border-color: $color-accent
+
+input[type='checkbox']
+    width: unset
+
+
+button
+    background-color: $color-accent
+    color: $color-bg
+    border: none
+    padding: 0.5rem
+
+    &:hover
+        background-color: $color-accent-hover
+
+    .bg-alt &
+        color: $color-bg-alt
+
+.form-field
+    margin-top: 1rem
+    margin-bottom: 1rem
+
+.form-label
+    margin-bottom: 0.5rem
+
+.required
+    color: $color-required
+
+pre
+    margin: 0 1rem
+    padding: 0.7rem
+    border-radius: 0.2rem
+    background-color: $color-bg-code
+    overflow: auto
+
+    code
+        padding: 0
+
+.label
+    display: inline-block
+    font-family: $font-family-header
+    font-weight: $font-weight-normal
+    // Label rounded
+    &.label-rounded
+        background-color: $color-accent
+        border-radius: 5rem
+        padding-left: .4rem
+        padding-right: .4rem
+    &.label-round-rect
+        background-color: $color-bg
+        border-radius: 10%
+        padding-top: .2rem
+        padding-bottom: .2rem
+        padding-left: .6rem
+        padding-right: .6rem
+    &.label-primary
+        color: $color-bg
+    &.label-secondary 
+        color: $color-bg-alt
+    &.label-accent
+        color: $color-accent
+    &.label-accent-alt
+        color: $color-accent-hover
