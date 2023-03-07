@@ -1,5 +1,4 @@
 .sidebar
-    width: 18rem
     min-width: 18rem
     padding: 1rem /* set to inline-flex */
     flex-direction: column
@@ -13,6 +12,15 @@
         width:100%
         margin-left: auto
         margin-right: auto
+
+    @media only screen and (max-width: $screen-m)
+        width: 80%
+    
+    @media only screen and (max-width: $screen-s)
+        width: 100%
+    
+    @media only screen and (max-width: $screen-xxs)
+        width: auto
 
 .sidebar-content
     padding: 1rem 2rem 1rem 2rem
