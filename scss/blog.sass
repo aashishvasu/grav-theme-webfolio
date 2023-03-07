@@ -1,5 +1,4 @@
 .blog
-    padding: 2rem 1rem
     display: flex
     justify-content: center
 
@@ -27,11 +26,16 @@
         background-color: $color-bg-code
         border-radius: 0.7rem
 
-        .blog__card__img
-            border-radius: 1rem 0px 0px 1rem
-
         .blog__card__content
             color: $color-accent
+
+        @media only screen and (min-width: $screen-xs)
+            .blog__card__img
+                border-radius: 0.7rem 0.7rem 0px 0px
+        @media only screen and (min-width: $screen-m)
+            .blog__card__img
+                border-radius: 0.7rem 0px 0px 0.7rem
+        
 
 .blog__card__link
     margin: 4rem 1rem
@@ -48,7 +52,7 @@
     height: 15rem
     width: 100%
     overflow: hidden
-    object-fit: cover
+    object-fit: fill
 
 .blog__card__content
     margin: 2rem
@@ -89,8 +93,7 @@
     
     .blog__card__img
         flex: 0 0 40%
-        align-self: stretch
-        height: unset
+        height: auto
     
     .blog__card__content
         max-height: 100%
