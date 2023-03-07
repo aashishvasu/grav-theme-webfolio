@@ -1,0 +1,37 @@
+*,
+*:after,
+*:before
+    box-sizing: inherit
+
+html
+    box-sizing: border-box
+
+::selection
+    background: $color-accent
+    color: white
+
+:hover
+    transition: color $transition-time-hover, background-color $transition-time-hover
+
+body
+    background-color: $color-bg
+    color: $color-text
+    font-family: $font-family-base
+    font-size: $font-size-s
+    font-weight: $font-weight-normal
+    line-height: 1.6
+    
+
+    &.mobile-nav-open
+        overflow-y: hidden
+
+@media only screen and (min-width: $screen-s)
+    body
+        padding: 0 0 (0rem + $font-size-s) 0
+
+#body
+    margin-top: 5rem
+    transition: margin 0.5s
+
+    .scrolled &
+        margin-top: 3rem

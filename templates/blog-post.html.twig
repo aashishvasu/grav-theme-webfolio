@@ -1,37 +1,39 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-<section class="blog-post">
-    <section class="blog-post__container">
-        <section class="blog-post__header {{ header.header_classes }}">
-            <h1 class="blog-post__header__title">{{ header.title }}</h1>
-            <div class="blog-post__header__date">
-                {% set date_format = page.dateformat ? page.dateformat : system.pages.dateformat.short %}
-                {% set published = page.publishDate|date(date_format) %}
-                {% set date = page.date|date(date_format) %}
+<section class="container">
+    <section class="blog-post">
+        <section>
+            <section class="blog-post__header {{ header.header_classes }}">
+                <h1 class="blog-post__header__title">{{ header.title }}</h1>
+                <div class="blog-post__header__date">
+                    {% set date_format = page.dateformat ? page.dateformat : system.pages.dateformat.short %}
+                    {% set published = page.publishDate|date(date_format) %}
+                    {% set date = page.date|date(date_format) %}
 
-                {% if page.header.publish_date and published is not same as(date) %}
-                    {{ date }} 
-                    | Originally published {{ published }}
-                {% else %}
-                    {{ date }}
-                {% endif %}
-            </div>
-        </section>
-        <hr class="blog-post__divider" >
-        <section class="blog-post__content {{ header.content_classes }}">
-            {% set content_no_summary = content %}
-            {% if config.site.summary.delimiter in page.rawMarkdown %}
-                {% set content_no_summary = content|slice(page.summary|length) %}
-            {% endif %}
-            {{ content_no_summary|raw }}
-        </section>        
-        {% if config.plugins.jscomments.enabled %}
-            <section class="blog-post__comments">
-                    {{ jscomments|raw }}
+                    {% if page.header.publish_date and published is not same as(date) %}
+                        {{ date }} 
+                        | Originally published {{ published }}
+                    {% else %}
+                        {{ date }}
+                    {% endif %}
+                </div>
             </section>
-        {% endif %}
+            <hr class="blog-post__divider" >
+            <section class="blog-post__content {{ header.content_classes }}">
+                {% set content_no_summary = content %}
+                {% if config.site.summary.delimiter in page.rawMarkdown %}
+                    {% set content_no_summary = content|slice(page.summary|length) %}
+                {% endif %}
+                {{ content_no_summary|raw }}
+            </section>        
+            {% if config.plugins.jscomments.enabled %}
+                <section class="blog-post__comments">
+                        {{ jscomments|raw }}
+                </section>
+            {% endif %}
+        </section>
+        {% include 'partials/sidebar.html.twig'%}
     </section>
-    {% include 'partials/sidebar.html.twig'%}
 </section>
 {% endblock %}
