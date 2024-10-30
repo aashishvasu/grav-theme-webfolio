@@ -4,7 +4,6 @@
 {% block content %}
 <div class="container">
     <section class="blog">
-        <section>
             {{ content|raw }}
             <section class="blog__cards">
                 {# some collection #}
@@ -41,7 +40,6 @@
                     {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
                 {% endif %}
             </section>
-        </section>
         {% include 'partials/sidebar.html.twig'%}
     </section>
 </div>
